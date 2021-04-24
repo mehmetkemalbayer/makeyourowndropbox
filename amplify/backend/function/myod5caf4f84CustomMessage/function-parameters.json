@@ -1,0 +1,26 @@
+{
+  "trigger": true,
+  "modules": [
+    "verification-link"
+  ],
+  "parentResource": "myod5caf4f84",
+  "functionName": "myod5caf4f84CustomMessage",
+  "resourceName": "myod5caf4f84CustomMessage",
+  "parentStack": "auth",
+  "triggerEnvs": [
+    {
+      "key": "RESOURCENAME",
+      "value": "resourceName"
+    }
+  ],
+  "triggerDir": "/snapshot/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/CustomMessage",
+  "triggerTemplate": "CustomMessage.json.ejs",
+  "triggerEventPath": "CustomMessage.event.json",
+  "roleName": "myod5caf4f84CustomMessage",
+  "skipEdit": true,
+  "REDIRECTURL": "https://confirmation.myod.halay.studio/redirect",
+  "EMAILSUBJECT": "Email Confirmation",
+  "EMAILMESSAGE": "You can confirm your email by click this link",
+  "RESOURCENAME": "resourceName",
+  "enableCors": false
+}
