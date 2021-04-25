@@ -16,7 +16,9 @@
         "myod5caf4f84CustomMessage": {
           "REDIRECTURL": "https://confirmation.myod.halay.studio/redirect",
           "EMAILSUBJECT": "Email Confirmation",
-          "EMAILMESSAGE": "You can confirm your email by click this link"
+          "EMAILMESSAGE": "You can confirm your email by click this link",
+          "deploymentBucketName": "amplify-myod-dev-30147-deployment",
+          "s3Key": "amplify-builds/myod5caf4f84CustomMessage-662f43524a4962385345-build.zip"
         }
       },
       "auth": {
