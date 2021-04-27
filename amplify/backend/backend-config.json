@@ -40,5 +40,11 @@
         }
       }
     }
+  },
+  "analytics": {
+    "myod": {
+      "service": "Pinpoint",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }

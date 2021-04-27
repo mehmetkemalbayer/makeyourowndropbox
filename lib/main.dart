@@ -1,3 +1,10 @@
+// Amplify Flutter Packages
+import 'package:amplify_flutter/amplify.dart';
+import 'package:amplify_analytics_pinpoint/amplify_analytics_pinpoint.dart';
+import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
+
+// Generated in previous step
+import 'amplifyconfiguration.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -46,17 +53,43 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  String _counter = "";
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  Future<void> _incrementCounter() async {
+    try {
+      SignInResult res = await Amplify.Auth.signInWithWebUI();
+      setState(() {
+        // This call to setState tells the Flutter framework that something has
+        // changed in this State, which causes it to rerun the build method below
+        // so that the display can reflect the updated values. If we changed
+        // _counter without calling setState(), then the build method would not be
+        // called again, and so nothing would appear to happen.
+        _counter = res.isSignedIn.toString();
+      });
+    } on AuthException catch (e) {
+      print(e.message);
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _configureAmplify();
+  }
+
+  void _configureAmplify() async {
+    // Add the following line to add API plugin to your app
+    // Add this line, to include the Auth plugin.
+    AmplifyAnalyticsPinpoint analyticsPlugin = AmplifyAnalyticsPinpoint();
+    AmplifyAuthCognito authPlugin = AmplifyAuthCognito();
+    Amplify.addPlugins([authPlugin, analyticsPlugin]);
+
+    try {
+      await Amplify.configure(amplifyconfig);
+    } on AmplifyAlreadyConfiguredException {
+      print(
+          "Tried to reconfigure Amplify; this can occur when your app restarts on Android.");
+    }
   }
 
   @override

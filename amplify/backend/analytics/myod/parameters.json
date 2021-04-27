@@ -1,0 +1,21 @@
+{
+    "appName": "myod",
+    "roleName": "pinpointLambdaRolebcef27f1",
+    "cloudformationPolicyName": "cloudformationPolicybcef27f1",
+    "cloudWatchPolicyName": "cloudWatchPolicybcef27f1",
+    "pinpointPolicyName": "pinpointPolicybcef27f1",
+    "authPolicyName": "pinpoint_amplify_bcef27f1",
+    "unauthPolicyName": "pinpoint_amplify_bcef27f1",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

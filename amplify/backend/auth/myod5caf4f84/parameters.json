@@ -1,6 +1,6 @@
 {
     "identityPoolName": "myod5caf4f84_identitypool_5caf4f84",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "myod5caf4f84",
     "userPoolName": "myod5caf4f84_userpool_5caf4f84",
     "autoVerifiedAttributes": [
